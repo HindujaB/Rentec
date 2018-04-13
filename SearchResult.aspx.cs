@@ -61,7 +61,7 @@ public partial class SearchResult : System.Web.UI.Page
                 con.Open();
                 SqlCommand cmdl = new SqlCommand("UPDATE [user_details] SET lawyer_fee = '" + FEE + "'WHERE user_ID = '" + UID + "'", con);
                 cmdl.ExecuteNonQuery();
-                Label1.Text = "Lawyer Fee updated successfuly!";
+                Label1.Text = "Lawyer Fees updated successfuly!";
                 con.Close();
             }
             //Response.Redirect("Signin.aspx");
