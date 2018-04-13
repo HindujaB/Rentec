@@ -99,7 +99,7 @@
                    case "false":
                        msg.style.display = "block";
                        msg.style.color = "green";
-                       msg.innerHTML = "User Name Available";
+                       msg.innerHTML = "Username Available";
                        break;
                }
            }
