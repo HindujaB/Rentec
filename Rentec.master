@@ -1,0 +1,131 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Rentec.master.cs" Inherits="Rentec" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Rentec</title>
+    <meta charset=”utf-8″>
+<meta http-equiv=”X-UA-Compatible” content=”IE=edge”>
+<meta name=”viewport” content=”width=device-width, initial-scale=1″>
+
+      <link rel="shortcut icon" href="Images/favicon.ico" />
+
+      <link rel="icon" type="image/gif" href="Images/animated_favicon1.gif" />
+
+    <style>
+        body {
+            background: url("Images/Background.jpg") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-attachment: fixed;
+            height: 100%;
+            width: 1000px;
+        }
+        .jumbotron {
+  height: 400px;
+  width: 100%;
+  max-height: 50%;
+  max-width: 100%;
+  min-height: 20%;
+  min-width: 30%;
+  background-image: url("~\Images\cover.png");
+  background-size: cover;
+}
+        #coverimg {
+            padding: 0;
+            display: block;
+            margin: 0 auto;
+            width: 133%;
+            height: 200px;
+            border-color: #99ccff;
+            border-style: dotted;
+        }
+
+   
+
+        .headtxt {
+            position: relative;
+        }
+
+        .topleft {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+
+        #home {
+            font-family: 'Ice kingdom';
+            font-size: 85px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            padding: 0;
+            border: none;
+            background: none;
+        }
+
+       
+
+        .sub {
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: absolute;
+            margin-top:100px;
+            left: 30px;
+        }
+        .jumbotron.cover{
+            margin-top:20px;
+            background-image:url("Images/cover.jpg");
+            background-size:cover;
+            height:250px;
+            min-width:1450px;
+        }
+
+        .head {
+            position: relative;
+            left: 0px;
+            top: 0px;
+        }
+    </style>
+  
+        
+    <link href ="css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="js/bootstrap.min.js"></script>
+       <script src="js/jquery-3.3.1.min.js"></script>
+       <script runat="server">
+            void Home_click(object Sender, EventArgs e)
+           {
+               Session.Remove("user");
+               Response.Redirect("~/Start.aspx");
+
+
+           }
+       </script>
+</head>
+<body style="height: 638px">
+    <div class="container">
+        <div class="jumbotron cover">
+           <%-- <asp:ImageMap ID="coverimg" runat="server" ImageUrl="~/Images/cover.jpg">
+            </asp:ImageMap>--%>
+            <div class="topleft">
+                
+               
+              
+                     <asp:HyperLink ID="home" runat="server" Font-Bold="False">Rentec</asp:HyperLink>
+            </div>
+            <div class="sub">
+                <h2>An Online Property Renting Website </h2>
+            </div>
+        </div>
+        </div>
+    <div class="container body-content">
+    <asp:ContentPlaceHolder ID="CPHmain" runat="server"></asp:ContentPlaceHolder>
+        <br/>
+        <footer>
+            <p style="color: #FFFFFF">&copy;<%:DateTime.Now.Year %> - Rentec - Online Renting Website </p>
+        </footer>
+   </div>
+</body>
+</html>
